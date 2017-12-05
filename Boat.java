@@ -6,18 +6,36 @@
 
 public class Boat {
 	private String vin,
+				   customerID,
 				   make,
 				   model,
 				   color,
-				   leaseStartDate,
-				   leaseEndDate;
+				   isPowered;
+	
+	/**
+	 * Default constructor
+	 */
 	public Boat(){
 		setVin("");
+		setCustomerID("");
 		setMake("");
 		setModel("");
 		setColor("");
-		setLeaseStartDate("");
-		setLeaseEndDate("");
+		setIsPowered("");
+	}
+	
+	/**
+	 * Sets information in the boat object
+	 * @param make The make of the boat
+	 * @param model The model of the boat
+	 * @param color The color of the boat
+	 * @param isPowered Whether the boat is powered or not
+	 */
+	public void setAllBoatInfo(String make, String model, String color, String isPowered){
+		this.make = make;
+		this.model = model;
+		this.color = color;
+		this.isPowered = isPowered;
 	}
 	
 	/**
@@ -31,6 +49,19 @@ public class Boat {
 	 */
 	public void setVin(String vin) {
 		this.vin = vin;
+	}
+	
+	/** 
+	 * @return the customer ID
+	 */
+	public String getCustomerID(){
+		return customerID;
+	}
+	/**
+	 * @param customerID the customerID to set
+	 */
+	public void setCustomerID(String customerID){
+		this.customerID = customerID;
 	}
 	/**
 	 * @return the make
@@ -69,27 +100,21 @@ public class Boat {
 		this.color = color;
 	}
 	/**
-	 * @return the leaseStartDate
+	 * @return the isPowered
 	 */
-	public String getLeaseStartDate() {
-		return leaseStartDate;
+	public String getIsPowered() {
+		return isPowered;
 	}
+
 	/**
-	 * @param leaseStartDate the leaseStartDate to set
+	 * @param isPowered the isPowered to set
 	 */
-	public void setLeaseStartDate(String leaseStartDate) {
-		this.leaseStartDate = leaseStartDate;
+	public void setIsPowered(String isPowered) {
+		this.isPowered = isPowered;
 	}
-	/**
-	 * @return the leaseEndDate
-	 */
-	public String getLeaseEndDate() {
-		return leaseEndDate;
-	}
-	/**
-	 * @param leaseEndDate the leaseEndDate to set
-	 */
-	public void setLeaseEndDate(String leaseEndDate) {
-		this.leaseEndDate = leaseEndDate;
+	
+	@Override
+	public String toString(){
+		return "VIN: " + getVin() + " Customer ID: " + getCustomerID() + " Make: " + getMake() + " Model: " + getModel() + " Color: " + getColor() + " Is Powered: " + getIsPowered();
 	}
 }
